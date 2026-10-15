@@ -1,4 +1,4 @@
-// Program 10: Count positive numbers entered by the user until 0 is entered (break).
+
 #include <iostream>
 using namespace std;
 
