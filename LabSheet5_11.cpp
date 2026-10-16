@@ -1,25 +1,17 @@
-// Program 11: Calculate factorial of a number using while loop.
 #include <iostream>
 using namespace std;
 
 int main() {
-    int inputNumber;
-    long long factorialResult = 1;
-
+    int n;
+    long long fact = 1;
     cout << "Enter a number: ";
-    cin >> inputNumber;
+    cin >> n;
 
-    if (inputNumber < 0) {
-        cout << "Factorial is not defined for negative numbers." << endl;
-        return 0;
+    int i = 1;
+    while (i <= n) {
+        fact *= i;
+        i++;
     }
-
-    int counter = inputNumber;
-    while (counter > 1) {
-        factorialResult *= counter;
-        counter--;
-    }
-
-    cout << "Factorial of " << inputNumber << " = " << factorialResult << endl;
+    cout << "Factorial: " << fact << endl;
     return 0;
 }
