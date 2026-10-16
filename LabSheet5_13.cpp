@@ -1,24 +1,19 @@
-// Program 13: Find and print all prime numbers between 1 and N.
 #include <iostream>
 using namespace std;
 
 int main() {
-    int upperLimit;
-    cout << "Enter the value of N: ";
-    cin >> upperLimit;
+    int n;
+    cout << "Enter N: ";
+    cin >> n;
 
-    cout << "Prime numbers between 1 and " << upperLimit << ": ";
-    for (int candidate = 2; candidate <= upperLimit; candidate++) {
-        bool isPrime = true;
-        for (int divisor = 2; divisor * divisor <= candidate; divisor++) {
-            if (candidate % divisor == 0) {
-                isPrime = false;
-                break;
-            }
+    cout << "Prime numbers: ";
+    for (int i = 2; i <= n; i++) {
+        int count = 0;
+        for (int j = 1; j <= i; j++) {
+            if (i % j == 0) count++;
         }
-        if (isPrime) {
-            cout << candidate << " ";
-        }
+        if (count == 2)
+            cout << i << " ";
     }
     cout << endl;
     return 0;
