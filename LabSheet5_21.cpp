@@ -1,27 +1,21 @@
-// Program 21: Find the sum of all even and odd digits in a given number.
 #include <iostream>
 using namespace std;
 
 int main() {
-    int inputNumber;
+    int n, evenSum = 0, oddSum = 0;
     cout << "Enter a number: ";
-    cin >> inputNumber;
+    cin >> n;
 
-    int evenDigitSum = 0, oddDigitSum = 0;
-    int temp = inputNumber;
-    if (temp < 0) temp = -temp; // handle negative numbers
-
-    while (temp != 0) {
-        int digit = temp % 10;
-        if (digit % 2 == 0) {
-            evenDigitSum += digit;
-        } else {
-            oddDigitSum += digit;
-        }
-        temp /= 10;
+    while (n > 0) {
+        int digit = n % 10;
+        if (digit % 2 == 0)
+            evenSum += digit;
+        else
+            oddSum += digit;
+        n /= 10;
     }
 
-    cout << "Sum of even digits: " << evenDigitSum << endl;
-    cout << "Sum of odd digits: " << oddDigitSum << endl;
+    cout << "Sum of even digits: " << evenSum << endl;
+    cout << "Sum of odd digits: " << oddSum << endl;
     return 0;
 }
