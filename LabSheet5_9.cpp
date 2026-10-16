@@ -1,38 +1,16 @@
-// Program 9: Demonstrate default case when no matching switch case exists.
 #include <iostream>
 using namespace std;
 
 int main() {
-    int dayNumber;
-    cout << "Enter a day number (1-7): ";
-    cin >> dayNumber;
+    int gradeCode;
+    cout << "Enter grade code (1-3): ";
+    cin >> gradeCode;
 
-    switch (dayNumber) {
-        case 1:
-            cout << "Monday" << endl;
-            break;
-        case 2:
-            cout << "Tuesday" << endl;
-            break;
-        case 3:
-            cout << "Wednesday" << endl;
-            break;
-        case 4:
-            cout << "Thursday" << endl;
-            break;
-        case 5:
-            cout << "Friday" << endl;
-            break;
-        case 6:
-            cout << "Saturday" << endl;
-            break;
-        case 7:
-            cout << "Sunday" << endl;
-            break;
-        default:
-            // Executes when dayNumber does not match any case (e.g. 0, 8, -3)
-            cout << "Invalid day number! Please enter a value between 1 and 7." << endl;
-            break;
+    switch (gradeCode) {
+        case 1: cout << "Excellent" << endl; break;
+        case 2: cout << "Good" << endl; break;
+        case 3: cout << "Average" << endl; break;
+        default: cout << "Default Triggered: No matching grade code!" << endl;
     }
     return 0;
 }
