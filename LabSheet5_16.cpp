@@ -1,25 +1,20 @@
-// Program 16: Check whether a number is a perfect number.
-// A perfect number equals the sum of its proper divisors (excluding itself),
-// e.g. 6 = 1 + 2 + 3.
 #include <iostream>
 using namespace std;
 
 int main() {
-    int inputNumber;
+    int num, sum = 0;
     cout << "Enter a number: ";
-    cin >> inputNumber;
+    cin >> num;
 
-    int divisorSum = 0;
-    for (int divisor = 1; divisor < inputNumber; divisor++) {
-        if (inputNumber % divisor == 0) {
-            divisorSum += divisor;
-        }
+    for (int i = 1; i <= num / 2; i++) {
+        if (num % i == 0)
+            sum += i;
     }
 
-    if (inputNumber > 0 && divisorSum == inputNumber) {
-        cout << inputNumber << " is a perfect number." << endl;
-    } else {
-        cout << inputNumber << " is not a perfect number." << endl;
-    }
+    if (sum == num && num > 0)
+        cout << num << " is a Perfect number." << endl;
+    else
+        cout << num << " is not a Perfect number." << endl;
+
     return 0;
 }
