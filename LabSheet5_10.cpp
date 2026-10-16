@@ -1,26 +1,17 @@
-
 #include <iostream>
 using namespace std;
 
 int main() {
-    int enteredNumber;
-    int positiveCount = 0;
-
-    cout << "Enter numbers one by one (enter 0 to stop):" << endl;
+    int num, count = 0;
+    cout << "Enter numbers (enter 0 to stop):" << endl;
 
     while (true) {
-        cin >> enteredNumber;
-
-        if (enteredNumber == 0) {
-            // Sentinel value reached, stop the loop
+        cin >> num;
+        if (num == 0)
             break;
-        }
-
-        if (enteredNumber > 0) {
-            positiveCount++;
-        }
+        if (num > 0)
+            count++;
     }
-
-    cout << "Total positive numbers entered: " << positiveCount << endl;
+    cout << "Total positive numbers: " << count << endl;
     return 0;
 }
