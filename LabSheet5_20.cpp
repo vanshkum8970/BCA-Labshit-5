@@ -1,27 +1,22 @@
-// Program 20: Print reverse of a number and check if it's a palindrome.
 #include <iostream>
 using namespace std;
 
 int main() {
-    int inputNumber;
+    int n, temp, rev = 0;
     cout << "Enter a number: ";
-    cin >> inputNumber;
+    cin >> n;
+    temp = n;
 
-    int originalNumber = inputNumber;
-    int reversedNumber = 0;
-
-    while (inputNumber != 0) {
-        int lastDigit = inputNumber % 10;
-        reversedNumber = reversedNumber * 10 + lastDigit;
-        inputNumber /= 10;
+    while (temp > 0) {
+        rev = rev * 10 + (temp % 10);
+        temp /= 10;
     }
 
-    cout << "Reversed number: " << reversedNumber << endl;
+    cout << "Reversed Number: " << rev << endl;
+    if (rev == n)
+        cout << "It is a Palindrome." << endl;
+    else
+        cout << "It is not a Palindrome." << endl;
 
-    if (originalNumber == reversedNumber) {
-        cout << originalNumber << " is a palindrome." << endl;
-    } else {
-        cout << originalNumber << " is not a palindrome." << endl;
-    }
     return 0;
 }
