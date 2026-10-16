@@ -1,17 +1,15 @@
-// Program 28: Display the sum of series: 1 + 2 + 3 + ... + N.
 #include <iostream>
 using namespace std;
 
 int main() {
-    int upperLimit;
-    cout << "Enter the value of N: ";
-    cin >> upperLimit;
+    int n, sum = 0;
+    cout << "Enter N: ";
+    cin >> n;
 
-    long long seriesSum = 0;
-    for (int currentTerm = 1; currentTerm <= upperLimit; currentTerm++) {
-        seriesSum += currentTerm;
+    for (int i = 1; i <= n; i++) {
+        sum += i;
     }
 
-    cout << "Sum of series 1 + 2 + ... + " << upperLimit << " = " << seriesSum << endl;
+    cout << "Sum of series: " << sum << endl;
     return 0;
 }
