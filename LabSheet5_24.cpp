@@ -1,14 +1,13 @@
-// Program 24: Display the multiplication tables from 1 to 10.
 #include <iostream>
 using namespace std;
 
 int main() {
-    for (int tableNumber = 1; tableNumber <= 10; tableNumber++) {
-        cout << "Multiplication table of " << tableNumber << ":" << endl;
-        for (int multiplier = 1; multiplier <= 10; multiplier++) {
-            cout << tableNumber << " x " << multiplier << " = " << (tableNumber * multiplier) << endl;
+    for (int i = 1; i <= 10; i++) {
+        cout << "Table of " << i << ":" << endl;
+        for (int j = 1; j <= 10; j++) {
+            cout << i * j << "\t";
         }
-        cout << endl;
+        cout << "\n\n";
     }
     return 0;
 }
