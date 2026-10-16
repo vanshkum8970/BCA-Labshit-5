@@ -1,30 +1,23 @@
-// Program 6: Check if a number is prime, terminate loop early using break.
 #include <iostream>
 using namespace std;
 
 int main() {
-    int inputNumber;
+    int n;
     bool isPrime = true;
-
     cout << "Enter a number: ";
-    cin >> inputNumber;
+    cin >> n;
 
-    if (inputNumber <= 1) {
-        isPrime = false;
-    } else {
-        for (int divisor = 2; divisor * divisor <= inputNumber; divisor++) {
-            if (inputNumber % divisor == 0) {
-                isPrime = false;
-                // No need to check further once a divisor is found
-                break;
-            }
+    if (n <= 1) isPrime = false;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) {
+            isPrime = false;
+            break;
         }
     }
 
-    if (isPrime) {
-        cout << inputNumber << " is a prime number." << endl;
-    } else {
-        cout << inputNumber << " is not a prime number." << endl;
-    }
+    if (isPrime)
+        cout << "Prime" << endl;
+    else
+        cout << "Not Prime" << endl;
     return 0;
 }
