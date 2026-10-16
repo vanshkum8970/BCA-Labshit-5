@@ -1,19 +1,16 @@
-// Program 17: Display all perfect numbers between 1 and 1000.
 #include <iostream>
 using namespace std;
 
 int main() {
     cout << "Perfect numbers between 1 and 1000: ";
-    for (int candidate = 1; candidate <= 1000; candidate++) {
-        int divisorSum = 0;
-        for (int divisor = 1; divisor < candidate; divisor++) {
-            if (candidate % divisor == 0) {
-                divisorSum += divisor;
-            }
+    for (int num = 1; num <= 1000; num++) {
+        int sum = 0;
+        for (int i = 1; i <= num / 2; i++) {
+            if (num % i == 0)
+                sum += i;
         }
-        if (divisorSum == candidate && candidate != 0) {
-            cout << candidate << " ";
-        }
+        if (sum == num)
+            cout << num << " ";
     }
     cout << endl;
     return 0;
