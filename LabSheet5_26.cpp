@@ -1,24 +1,19 @@
-// Program 26: Find LCM of two numbers using loops.
 #include <iostream>
 using namespace std;
 
 int main() {
-    int firstNumber, secondNumber;
-    cout << "Enter first number: ";
-    cin >> firstNumber;
-    cout << "Enter second number: ";
-    cin >> secondNumber;
+    int a, b, maxVal;
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
 
-    int largerNumber = (firstNumber > secondNumber) ? firstNumber : secondNumber;
+    maxVal = (a > b) ? a : b;
 
-    int lcmResult = largerNumber;
     while (true) {
-        if (lcmResult % firstNumber == 0 && lcmResult % secondNumber == 0) {
+        if (maxVal % a == 0 && maxVal % b == 0) {
+            cout << "LCM: " << maxVal << endl;
             break;
         }
-        lcmResult += largerNumber;
+        maxVal++;
     }
-
-    cout << "LCM of " << firstNumber << " and " << secondNumber << " = " << lcmResult << endl;
     return 0;
 }
