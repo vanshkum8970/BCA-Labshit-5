@@ -1,22 +1,18 @@
-// Program 12: Generate Fibonacci series using while loop.
 #include <iostream>
 using namespace std;
 
 int main() {
-    int termCount;
-    cout << "Enter the number of terms: ";
-    cin >> termCount;
+    int n, t1 = 0, t2 = 1, nextTerm;
+    cout << "Enter number of terms: ";
+    cin >> n;
 
-    long long previousTerm = 0, currentTerm = 1;
-    int termsPrinted = 0;
-
-    cout << "Fibonacci Series: ";
-    while (termsPrinted < termCount) {
-        cout << previousTerm << " ";
-        long long nextTerm = previousTerm + currentTerm;
-        previousTerm = currentTerm;
-        currentTerm = nextTerm;
-        termsPrinted++;
+    int count = 1;
+    while (count <= n) {
+        cout << t1 << " ";
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+        count++;
     }
     cout << endl;
     return 0;
