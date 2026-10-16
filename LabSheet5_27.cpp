@@ -1,23 +1,17 @@
-// Program 27: Find GCD of two numbers using loops.
 #include <iostream>
 using namespace std;
 
 int main() {
-    int firstNumber, secondNumber;
-    cout << "Enter first number: ";
-    cin >> firstNumber;
-    cout << "Enter second number: ";
-    cin >> secondNumber;
+    int a, b, gcd = 1;
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
 
-    int smallerNumber = (firstNumber < secondNumber) ? firstNumber : secondNumber;
-    int gcdResult = 1;
-
-    for (int divisor = 1; divisor <= smallerNumber; divisor++) {
-        if (firstNumber % divisor == 0 && secondNumber % divisor == 0) {
-            gcdResult = divisor; // keep updating; the last match is the greatest
-        }
+    int minVal = (a < b) ? a : b;
+    for (int i = 1; i <= minVal; i++) {
+        if (a % i == 0 && b % i == 0)
+            gcd = i;
     }
 
-    cout << "GCD of " << firstNumber << " and " << secondNumber << " = " << gcdResult << endl;
+    cout << "GCD: " << gcd << endl;
     return 0;
 }
